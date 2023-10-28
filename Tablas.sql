@@ -25,7 +25,7 @@ ID_flota int identity not null,
 Nombre varchar (50) not null,
 ID_imperio int not null,
 Mision varchar(100) not null, --tal vez crear una talbla con todas las misiones posibles e ir asignandolas x id? Atte: Fran
-Destino varchar(100),
+coordenadas varchar(100) not null check (coordenadas>=0 and coordenadas<128),
 
 primary key (ID_flota),
 foreign key (ID_imperio) references imperios(ID_imperio)
@@ -36,7 +36,7 @@ create table Planetas (
 Nombre varchar (100) not null,
 NombreVulgar varchar (100) not null,
 ID_imperio int not null,
-Coordenadas varchar(50) not null,
+Coordenadas varchar(50) not null check (coordenadas>=0 and coordenadas<128),
 NombreMontania varchar(50) not null,
 AlturaMontania float not null,
 
@@ -83,7 +83,7 @@ ID_flota int not null,
 ID_imperio int not null,
 ID_capitan int not null,
 Vida float not null,
-Maniobras varchar(100) not null,
+Maniobras varchar(100) not null,--pasar a tabla especifica 
 CapacidadDefensa float not null,
 CapacidAdatque float not null,
 EnergiaMax float not null check (energiamax > 0),
