@@ -3,7 +3,7 @@ go
 use Star_Trek
 go
 
---drop database Star_Trek
+drop database Star_Trek
 
 --diagrama de entidades relacional: https://lucid.app/lucidchart/8535c51d-d25d-4c1a-acd9-3943b116422b/edit?invitationId=inv_b7797475-bed9-4ffb-ad5d-e5c9e250f8c2&page=0_0#
 
@@ -11,8 +11,8 @@ go
 --no se si a las columnas con nombres compuestos (nombremontania,nombrevulgar, etc) lo prefieren dejar como lo hice o si les gusta mas separado por _. Atte: Fran
 
 create table Imperios (
-ID_imperio int not null,
-nombre varchar(25) not null,
+ID_imperio int identity not null,
+nombre varchar(50) not null,
 TempPromedio float not null check (temppromedio >0),
 
 primary key(id_imperio)
@@ -21,7 +21,7 @@ primary key(id_imperio)
 
 
 create table Flotas (
-ID_flota int not null,
+ID_flota int identity not null,
 Nombre varchar (50) not null,
 ID_imperio int not null,
 Mision varchar(100) not null, --tal vez crear una talbla con todas las misiones posibles e ir asignandolas x id? Atte: Fran
@@ -33,7 +33,7 @@ foreign key (ID_imperio) references imperios(ID_imperio)
 
 
 create table Planetas (
-ID_planeta varchar (100) not null,
+Nombre varchar (100) not null,
 NombreVulgar varchar (100) not null,
 ID_imperio int not null,
 Coordenadas varchar(50) not null,
@@ -48,18 +48,18 @@ foreign key (ID_imperio) references imperios(ID_imperio)
 create table Razas (
 --Aca tengo un temita para la primary key, me parece que tendriamos q hacer algo como en naves (que no se como implementarlo). Pero lo hablamos. Atte: Fran
 Nombre varchar(50) not null,
-ID_raza int not null,
-ID_planeta varchar(100) not null,
+ID_raza int identity not null,
+NombrePlaneta varchar(100) not null,
 PorcentajeEnPlaneta float null,
 HabilidadPrincipal varchar(100) not null,
 HabilidadDefensa float not null,
 HabilidadAtaque float not null,
 
-foreign key (ID_planeta) references planetas(ID_planeta)
+foreign key (NombrePlaneta) references planetas(Nombre)
 );
 
 create table Capitanes (
-ID_capitan int not null,
+ID_capitan int identity not null,
 Nombre varchar(50) not null,
 ID_imperio int not null,
 ID_nave int not null,
