@@ -4,9 +4,9 @@ use Star_Trek
 go
 
 drop database Star_Trek
-
+ 
 --diagrama de entidades relacional: https://lucid.app/lucidchart/8535c51d-d25d-4c1a-acd9-3943b116422b/edit?invitationId=inv_b7797475-bed9-4ffb-ad5d-e5c9e250f8c2&page=0_0#
-
+ 
 
 --no se si a las columnas con nombres compuestos (nombremontania,nombrevulgar, etc) lo prefieren dejar como lo hice o si les gusta mas separado por _. Atte: Fran
 
