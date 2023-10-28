@@ -1,0 +1,4 @@
+Notas:
+
+- Las columnas inteligencia y coraje son variables de 0 a 2 que multiplican la capacidad de defensa y ataque respectivamente de las naves
+- Las columnas habilidad defensa/ataque de la tabla razas hace lo mismo que la nota anterior
