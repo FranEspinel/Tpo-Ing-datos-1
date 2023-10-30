@@ -18,7 +18,7 @@ TempPromedio float not null check (temppromedio >0),
 primary key(id_imperio)
 );
 --la temperatura la medioms en Kelvin, uso el check por que la temperatura promedio no puede ser menor al 0 absoluto. Atte: Fran
-
+ 
 
 create table Flotas (
 ID_flota int identity not null,
