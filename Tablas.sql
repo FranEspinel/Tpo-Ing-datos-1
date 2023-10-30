@@ -40,7 +40,7 @@ Coordenadas varchar(50) not null check (coordenadas>=0 and coordenadas<128),
 NombreMontania varchar(50) not null,
 AlturaMontania float not null,
 
-primary key (ID_planeta),
+primary key (Nombre),
 foreign key (ID_imperio) references imperios(ID_imperio)
 );
 

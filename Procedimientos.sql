@@ -39,13 +39,17 @@ insert into Planetas(Nombre,NombreVulgar,ID_imperio,Coordenadas,NombreMontania,A
 values(@Nombre,@nombrevulgar,@id_imperio,@coordenadas,@nombremontania,@alturamontania)
 end;
 
-exec cargar_planetas '','','','','',''
+
+
+exec cargar_planetas 'FUP001','Tierra','1','','Aconcagua','6961'
+exec cargar_planetas 'IR001','Romulo','2','','Everest','8849'
+exec cargar_planetas 'IK001','Klingon','3','','Makalu','8481'
 
 ----------------------------------------------------------------------------------------
 create procedure cargar_razas(
 @nombre varchar(50),
 @nombrePlaneta varchar(100),
-@PorcentajeEnPlaneta float,
+@PorcentajeEnPlaneta float check(PorcntajeEnPlaneta <=100 and PorcentajeEnPlaneta >=0),
 @HabilidadPrincipal varchar (100),
 @HabilidadDefensa float,
 @HabilidadAtaque float
@@ -55,7 +59,9 @@ insert into Razas(Nombre,NombrePlaneta,PorcentajeEnPlaneta,HabilidadPrincipal,Ha
 values(@nombre,@nombrePlaneta,@PorcentajeEnPlaneta,@HabilidadPrincipal,@HabilidadDefensa,@HabilidadAtaque)
 end;
 
-exec cargar_razas '','','','','',''
+exec cargar_razas 'Humanos','Tierra','100','Resiliencia','70','70'
+exec cargar_razas 'Romulanos','Romulo','100','Inteligencia','60','80'
+exec cargar_razas 'Klingones','Klingon','100','Pelear','50','90'
 ----------------------------------------------------------------------------------------
 create procedure cargar_capitanes(
 @Nombre varchar(50),
@@ -72,7 +78,13 @@ values (@nombre,@id_imperio,@id_nave, @id_raza, @planetanacimiento,@inteligencia
 
 end
 ;
-
+exec cargar_capitanes 'Jean Luc Picard','1','NCC-1701-D','1','Tierra','95','80'
+exec cargar_capitanes 'James Tiberius Kirk','1','NCC-1701-A','1','Tierra','75','85'
+exec cargar_capitanes 'William Riker','1',null,'1','Tierra','70','85'
+exec cargar_capitanes 'Tomalak','2','D deidex','2','Romulo','90','75'
+exec cargar_capitanes 'Rekar','2','NX-59650','2','Romulo','65','85'
+exec cargar_capitanes 'K temoc','3','IKS TOng','3','Klingon','60','90'
+exec cargar_capitanes '','','','','','',''
 ----------------------------------------------------------------------------------------
 create procedure cargar_naves(
 @id_nave int,
