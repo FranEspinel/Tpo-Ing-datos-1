@@ -77,7 +77,7 @@ foreign key (id_imperio) references imperios(id_imperio),
 
 
 create table Naves (--ver el tema de la primary key. Atte: Fran
-ID_nave int not null,
+ID_nave varchar(50) not null,
 Nombre varchar(50) not null,
 ID_flota int not null,
 ID_imperio int not null,
