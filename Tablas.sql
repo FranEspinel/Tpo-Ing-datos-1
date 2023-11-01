@@ -29,6 +29,7 @@ coordenadas varchar(100) not null check (coordenadas>=0 and coordenadas<128),
 
 primary key (ID_flota),
 foreign key (ID_imperio) references imperios(ID_imperio)
+foreign key (Mision) references Misiones(mision)
 );
 
 
@@ -46,15 +47,13 @@ foreign key (ID_imperio) references imperios(ID_imperio)
 
 
 create table Razas (
---Aca tengo un temita para la primary key, me parece que tendriamos q hacer algo como en naves (que no se como implementarlo). Pero lo hablamos. Atte: Fran
-Nombre varchar(50) not null,
 ID_raza int identity not null,
-NombrePlaneta varchar(100) not null,
-PorcentajeEnPlaneta float null,
+Nombre varchar(50) not null,
 HabilidadPrincipal varchar(100) not null,
 HabilidadDefensa float not null,
 HabilidadAtaque float not null,
 
+primary key(ID_Raza),
 foreign key (NombrePlaneta) references planetas(Nombre)
 );
 
@@ -62,7 +61,7 @@ create table Capitanes (
 ID_capitan int identity not null,
 Nombre varchar(50) not null,
 ID_imperio int not null,
-ID_nave int not null,
+ID_nave varchar(50),
 ID_raza int not null,
 PlanetaNacimiento varchar(100) not null,
 Inteligencia float not null,
@@ -70,8 +69,8 @@ Coraje float not null,
 
 primary key (id_capitan),
 foreign key (id_imperio) references imperios(id_imperio),
---foreign key (id_nave) references naves(id_nave), temita con estas dos foreign, no me deja pq no son primarias en sus respectivas tablas. Atte: Fran
---foreign key (id_raza) references razas(id_raza),
+foreign key (id_nave) references naves(id_nave), temita con estas dos foreign, no me deja pq no son primarias en sus respectivas tablas. Atte: Fran
+foreign key (id_raza) references razas(id_raza),
 
 );
 
@@ -96,3 +95,11 @@ foreign key (id_imperio) references imperios (id_imperio),
 foreign key (id_capitan) references capitanes (id_capitan)
 );
 
+
+create table razas_en_planetas ();
+
+create table maniobras ();
+
+create table accioens ();
+
+create table naves_y_maniobras ();
