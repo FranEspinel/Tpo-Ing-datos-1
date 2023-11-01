@@ -23,7 +23,9 @@ as begin
 insert into Flotas(Nombre,ID_imperio,Mision,Destino) values (@Nombre,@id_imperio,@mision,@destino)
 end;
 
-exec cargar_flotas '','','',''
+exec cargar_flotas 'Flota FUP 1','1','-','Tierra'
+exec cargar_flotas 'Flota Romulana 1','2','-','Romulo'
+exec cargar_flotas 'Flota Klingon 1','3','-','Klingon'
 
 ----------------------------------------------------------------------------------------
 create procedure cargar_planetas(
@@ -79,15 +81,15 @@ values (@nombre,@id_imperio,@id_nave, @id_raza, @planetanacimiento,@inteligencia
 end
 ;
 exec cargar_capitanes 'Jean Luc Picard','1','NCC-1701-D','1','Tierra','95','80'
-exec cargar_capitanes 'James Tiberius Kirk','1','NCC-1701-A','1','Tierra','75','85'
+exec cargar_capitanes 'James Tiberius Kirk','1',null,'1','Tierra','75','85'
 exec cargar_capitanes 'William Riker','1',null,'1','Tierra','70','85'
 exec cargar_capitanes 'Tomalak','2','D deidex','2','Romulo','90','75'
 exec cargar_capitanes 'Rekar','2','NX-59650','2','Romulo','65','85'
 exec cargar_capitanes 'K temoc','3','IKS TOng','3','Klingon','60','90'
-exec cargar_capitanes '','','','','','',''
+--exec cargar_capitanes '','','','','','',''
 ----------------------------------------------------------------------------------------
 create procedure cargar_naves(
-@id_nave int,
+@id_nave varchar(50),
 @Nombre varchar(50),
 @ID_flota int,
 @ID_imperio int,
@@ -105,6 +107,10 @@ as begin
 
 insert into naves(id_nave,nombre,id_flota,id_imperio,id_capitan,vida,maniobras,capacidaddefensa,capacidadataque,energiamax,energiaacumulada,energiamaniobra,velmax)
 values(@id_nave,@nombre,@id_flota,@id_imperio,@id_capitan,@vida,@maniobras,@capacidaddefensa,@capacidadataque,@energiamax,@energiaacumulada,@energiamaniobra,@velmax)
-
 end
 ;
+
+exec cargar_naves 'NCC-1701-D','USS-Enterprise','1','1','1','100','-','-','-','-','-','-','-','-'
+exec cargar_naves 'D deidex','D deidex','2','2','4','100','-','-','-','-','-','-','-','-'
+exec cargar_naves 'NX-59650','Prometheus','2','2','5','100','-','-','-','-','-','-','-','-'
+exec cargar_naves 'IKS TOng','IKS TOng','3','3','6','100','-','-','-','-','-','-','-','-'
