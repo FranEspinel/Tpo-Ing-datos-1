@@ -46,7 +46,7 @@ ID_flota int identity not null,
 Nombre varchar (50) not null,
 ID_imperio int not null,
 Ultima_accion int not null,
-coordenadas varchar(100) not null check (coordenadas>=0 and coordenadas<128),
+coordenadas int not null check (coordenadas>=0 and coordenadas<128),
 
 primary key (ID_flota),
 foreign key (ID_imperio) references imperios(ID_imperio),
