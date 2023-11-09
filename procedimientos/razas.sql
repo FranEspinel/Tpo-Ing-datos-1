@@ -11,6 +11,6 @@ as begin
     values(@nombre, @HabilidadPrincipal,@HabilidadDefensa,@HabilidadAtaque)
 end;
 
-exec cargar_razas 'Humanos','Tierra','100','Resiliencia','70','70'
-exec cargar_razas 'Romulanos','Romulo','100','Inteligencia','60','80'
-exec cargar_razas 'Klingones','Klingon','100','Pelear','50','90'
+exec cargar_razas 'Humanos','Tierra',100.0,'Resiliencia',70.0,70.0
+exec cargar_razas 'Romulanos','Romulo',100.0,'Inteligencia',60.0,80.0
+exec cargar_razas 'Klingones','Klingon',100.0,'Pelear',50.0,90.0
