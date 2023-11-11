@@ -10,12 +10,11 @@ create procedure cargar_naves(
     @CapacidadAtaque float = null,
     @EnergiaMax float = null ,
     @EnergiaAcumulada float = null, 
-    @EnergiaManiobra float = null,
     @velmax float = null
 )
 as begin
-    insert into naves(modelo,nombre,id_flota,id_imperio,id_capitan,vida,Ultima_maniobra,capacidaddefensa,CapacidAdatque,energiamax,energiaacumulada,energiamaniobra,velmax)
-    values(@modelo,@nombre,@id_flota,@id_imperio,@id_capitan,@vida,@Ultima_maniobra,@capacidaddefensa,@capacidadataque,@energiamax,@energiaacumulada,@energiamaniobra,@velmax)
+    insert into naves(modelo,nombre,id_flota,id_imperio,id_capitan,vida,Ultima_maniobra,capacidaddefensa,capacidadataque,energiamax,energiaacumulada,velmax)
+    values(@modelo,@nombre,@id_flota,@id_imperio,@id_capitan,@vida,@Ultima_maniobra,@capacidaddefensa,@capacidadataque,@energiamax,@energiaacumulada,@velmax)
 end;
 
 exec cargar_naves 'NCC-1701-D','USS-Enterprise',1,1,1,100.0
