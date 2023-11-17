@@ -1,8 +1,0 @@
-Ya hay cargadas acciones, flotas, capitanes,imperios,naves,planetas (En todas estas tablas habria que agregar mas datos igual, pero cargue cosas como para ir probando)
-
-En procedimientos falta:
--asignar las acciones a flotas
--cargar maniobras
--asignar maniobras a naves
--agregar razas
--asignar razas en planetas

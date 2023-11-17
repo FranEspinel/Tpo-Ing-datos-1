@@ -13,3 +13,6 @@ exec cargar_razas 'Humanos','Resiliencia',70.0,70.0
 exec cargar_razas 'Romulanos','Inteligencia',60.0,80.0
 exec cargar_razas 'Klingones','Pelear',50.0,90.0
 exec cargar_razas 'Ferengi','Robar',50.0,90.0
+exec cargar_razas 'Borg','Dominar',90.0,90.0
+exec cargar_razas 'Cardasianos','Comerciar',50.0,50.0
+exec cargar_razas 'Betazed','Inteligencia Emocional',50.0,50.0
